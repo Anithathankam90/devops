@@ -1,0 +1,11 @@
+SSH keys
+
+1>used to identify oneself with the SSh server by public key cryptography and challenge code authentication
+
+2>Sever authentication is possible without sending password over the network. Possible to connect to multiple servers with the same key pair
+
+3>Private key is stored in client machine and Public key is shared with the remote server. Stored in ~/.ssh directory
+
+4>SSH key pair generated using ssh keygen command
+
+5>once generated, the public key has to be copied to the remote server to use SSH key authentication

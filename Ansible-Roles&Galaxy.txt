@@ -1,0 +1,23 @@
+Ansible Galaxy
+
+
+Ansible Galaxy refers to the Galaxy website where users can share roles, and to a command line tool for installing, creating and managing roles.
+
+The command line tool
+The ansible-galaxy command comes bundled with Ansible, and you can use it to install roles from Galaxy or directly from a git based SCM. You can also use it to create a new role, remove roles, or perform tasks on the Galaxy website.
+
+The command line tool by default communicates with the Galaxy website API using the server address https://galaxy.ansible.com. Since the Galaxy project is an open source project, you may be running your own internal Galaxy server and wish to override the default server address. You can do this using the –server option or by setting the Galaxy server value in your ansible.cfg file.
+
+Installing Roles
+Use the ansible-galaxy command to download roles from the Galaxy website
+
+$ ansible-galaxy install username.role_name
+
+roles_path
+Be aware that by default Ansible downloads roles to the path specified by the environment variable ANSIBLE_ROLES_PATH. This can be set to a series of directories (i.e. /etc/ansible/roles:~/.ansible/roles), in which case the first writable path will be used. When Ansible is first installed it defaults to /etc/ansible/roles, which requires root privileges.
+
+You can override this by setting the environment variable in your session, defining roles_path in an ansible.cfg file, or by using the –roles-path option. The following provides an example of using –roles-path to install the role into the current working directory:
+
+$ ansible-galaxy install --roles-path . geerlingguy.apache
+
+More info at https://docs.ansible.com/ansible/latest/reference_appendices/galaxy.html#ansible-galaxy
